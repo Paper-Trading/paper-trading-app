@@ -4,10 +4,17 @@
 {% block title %}Home{% endblock %}
  
 {% block content %}
+<head>
+    <title>
+        Home
+    </title>
+</head>
+
 <h1 style="text-align: center;" class="h2">Dashboard</h1>
 
     <body>
-        <h1 style="text-align: center;">Stockz</h1>
+        <h1 style="text-align: center;">Stonkz <i style="font-size: 34px" class="fas fa-chart-line"></i>
+        </h1>
     
         <form style="text-align: center;">
             <input type="text" name="ticker">
@@ -33,6 +40,7 @@
             
             <h3 style="text-align: center;"> Overview </h3>
             <div style="text-align: center;">
+                
                 {{ stockData.info['longName'] }}({{ stockData.info['symbol'] }}) is
             headquatered in {{ stockData.info['city'] }}, {{ stockData.info['state'] }}, {{ stockData.info['country'] }}
             , has a 52 week high of  ${{ stockData.info['fiftyTwoWeekHigh'] }}, a 52 week low of ${{ stockData.info['fiftyTwoWeekLow'] }}.

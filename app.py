@@ -159,6 +159,10 @@ def sell():
         return render_template('sell.html', msg=msg)
     return redirect(url_for('login'))
 
+@app.route('/dne')
+def dne():
+    return render_template('dne.html')
+
 # http://localhost:5000/home - this will be the home page, only accessible for loggedin users
 @app.route('/home')
 def home():
@@ -167,8 +171,11 @@ def home():
         
         ticker = request.args.get('ticker');
         if not ticker:
-            ticker='MSFT';
+            ticker='GME';
         stockData = yf.Ticker(ticker)
+
+    
+
         #stockInfo = stockData.info
         #print(stockInfo)
 
