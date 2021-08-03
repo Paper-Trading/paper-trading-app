@@ -1,0 +1,60 @@
+
+{% extends 'layout.html' %}
+ 
+{% block title %}Home{% endblock %}
+ 
+{% block content %}
+<h1 style="text-align: center;" class="h2">Dashboard</h1>
+
+    <body>
+        <h1 style="text-align: center;">Stockz</h1>
+    
+        <form style="text-align: center;">
+            <input type="text" name="ticker">
+            <br> <br>
+            <input type="submit" value="search"/>
+    
+            <!--
+            <select name="pattern">
+    
+                {% for pattern in patterns %}
+                <option value="{{ pattern }}">{{ patterns[pattern] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="scan" />
+            -->
+        </form>
+    
+        <!-- company name-->
+        <br>
+        <br>
+        
+        <div>
+            
+            <h3 style="text-align: center;"> Overview </h3>
+            <div style="text-align: center;">
+                {{ stockData.info['longName'] }}({{ stockData.info['symbol'] }}) is
+            headquatered in {{ stockData.info['city'] }}, {{ stockData.info['state'] }}, {{ stockData.info['country'] }}
+            , has a 52 week high of  ${{ stockData.info['fiftyTwoWeekHigh'] }}, a 52 week low of ${{ stockData.info['fiftyTwoWeekLow'] }}.
+             {{ stockData.info['longName'] }} has a market cap of ${{ stockData.info['marketCap'] }} and has a regular market volume of {{ stockData.info['regularMarketVolume'] }}
+             with an average 5 year dividend yield of {{ stockData.info['fiveYearAvgDividendYield'] }}.
+                
+            <br>
+
+            </div>
+            <br>
+            <h3 style="text-align: center;"> More About the Company</h3>
+            <br>
+            <div>{{ stockData.info['longBusinessSummary'] }} </div>
+            <br>
+
+
+
+
+        </div>
+    
+    
+    
+    </body>
+
+{% endblock %}

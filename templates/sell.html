@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+ 
+{% block title %}Profile{% endblock %}
+ 
+{% block content %}
+<div class="container">
+    <form action="{{ url_for('sell') }}" method="post">
+        <p>
+            <label for="Name">Name:</label><br>
+            <input type="text" name="Name" id="Name">
+        </p>
+        <p>
+            <label for="Ticker">Ticker:</label><br>
+            <input type="text" name="Ticker" id="Ticker">
+        </p>
+        <input type="submit" value="Sell">
+    </form>
+</div>
+
+{% endblock %}
